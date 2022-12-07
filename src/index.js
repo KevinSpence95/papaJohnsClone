@@ -11,7 +11,7 @@ import printMe from './print';
 function nonReactComponent() {
     const element = document.createElement('div')
 
-    element.innerHTML = _.join([`${myName('Kevin')}`, 'this is webpack!'], ' ')
+    element.innerHTML = _.join([`${myName('Kevinnn')}`, 'this is webpack!'], ' ')
 
     element.classList.add('hello')
 
