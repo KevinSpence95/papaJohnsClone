@@ -1,4 +1,5 @@
-import './style.css'
+import './sassyStyle.scss'
+// import './style.css'
 import Mountains from './Mountains.jpg'
 
 import _ from 'lodash'
