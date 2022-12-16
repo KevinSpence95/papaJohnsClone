@@ -1,31 +1,29 @@
-import './sassyStyle.scss'
+import "./sassyStyle.scss";
 // import './style.css'
-import Mountains from './Mountains.jpg'
+import Mountains from "./Mountains.jpg";
 
-import _ from 'lodash'
-import myName from './myname';
-import printMe from './print';
-
-
+import _ from "lodash";
+import myName from "./myname";
+import printMe from "./print";
 
 function nonReactComponent() {
-    const element = document.createElement('div')
+  const element = document.createElement("div");
 
-    element.innerHTML = _.join([`${myName('Kevinnn')}`, 'this is webpack!'], ' ')
+  element.innerHTML = _.join([`${myName("Kevinnn")}`, "this is webpack!"], " ");
 
-    element.classList.add('hello')
+  element.classList.add("hello");
 
-    const childPic = new Image();
-    childPic.src = Mountains;
-    element.appendChild(childPic)
+  const childPic = new Image();
+  childPic.src = Mountains;
+  element.appendChild(childPic);
 
-    const childH1 = document.createElement('h1')
-    childH1.textContent = 'Where is the font?'
-    element.appendChild(childH1)
+  const childH1 = document.createElement("h1");
+  childH1.textContent = "Where is the font?";
+  element.appendChild(childH1);
 
-    printMe()
+  printMe();
 
-    return element;
+  return element;
 }
 
-document.body.appendChild(nonReactComponent())
+document.body.appendChild(nonReactComponent());
