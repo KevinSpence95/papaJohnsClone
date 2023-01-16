@@ -1,29 +1,15 @@
-import "./sassyStyle.scss";
-// import './style.css'
-import Mountains from "./Mountains.jpg";
+import './style.css'
+import changeMain from './changeMain';
 
-import _ from "lodash";
-import myName from "./myname";
-import printMe from "./print";
+// import Mountains from "./Mountains.jpg";
 
-function nonReactComponent() {
-  const element = document.createElement("div");
+function papaJohns() {
 
-  element.innerHTML = _.join([`${myName("Kevinnn")}`, "this is webpack!"], " ");
+  return changeMain("home")
 
-  element.classList.add("hello");
-
-  const childPic = new Image();
-  childPic.src = Mountains;
-  element.appendChild(childPic);
-
-  const childH1 = document.createElement("h1");
-  childH1.textContent = "Where is the font?";
-  element.appendChild(childH1);
-
-  printMe();
-
-  return element;
+ 
 }
 
-document.body.appendChild(nonReactComponent());
+const main = document.querySelector('.mainContent')
+
+main.appendChild(papaJohns());
