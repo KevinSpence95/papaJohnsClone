@@ -13,12 +13,17 @@
 
 :root {
   height: 100vh;
+  font-size: 16px;
   --color0: rgb(209, 209, 209);
   --color1: white;
   --color2: black;
   --color3: #38A575;
   --color4: #CE2735;
   --color5: rgb(230, 230, 230);
+  --color6: rgb(46, 46, 46);
+  --color7: rgb(98, 98, 98);
+  --mainFont:'Oswald', sans-serif;
+  --secondaryFont: Helvetica,Arial,sans-serif;
 }
 
 /* make these items responsive */
@@ -41,7 +46,7 @@ select {
 body {
   min-height: 100%;
   /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
-  font-family:'Oswald', sans-serif;
+  font-family:var(--mainFont);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -63,6 +68,7 @@ a {
 .navContainer {
   width: 100%;
   height: 128px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .navContainer ul,
 .navContainer li,
@@ -119,8 +125,11 @@ a {
   filter: brightness(0) saturate(100%) invert(29%) sepia(67%) saturate(5198%) hue-rotate(341deg) brightness(83%) contrast(94%);
   /* https://stackoverflow.com/questions/22252472/how-can-i-change-the-color-of-an-svg-element*/
 }
+.signUp > a:hover {
+  background-color: var(--color6);
+}
 
-/**************/
+/*******************************************************************************************/
 
 .bottomNav {
   height: 50%;
@@ -155,12 +164,12 @@ a {
 }
 .login2 > a {
   padding:.5rem;
-  height: 50%;
-  border-radius: 1rem;
+  border-radius: 2rem;
   color:var(--color1);
   background-color: var(--color2);
   border: 1px solid var(--color2);
   margin-right: .5rem;
+  font-size:.8rem;
 }
 
 .promoCodeForm {
@@ -224,6 +233,62 @@ a {
   position: relative;
   bottom: 5px;
 }
+.login2 > a:hover, .promoCodeForm input[type=submit]:hover {
+  background-color: var(--color6);
+}
+
+/*******************************************************************************************/
+
+footer {
+  display: flex;
+  justify-content: center;
+  border-top: var(--color0) 1px solid;
+  
+  padding:1.5rem max(4rem,8vw);
+}
+.footerContentWidthControl {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.footerLinks {
+  width: calc(100% - min(600px,42%));
+  display: flex;
+  align-items: baseline;
+}
+.footerLinks > div {
+  margin-right: auto;
+}
+.footerLinks a {
+  color:grey;
+  font-size: .75rem;
+  text-transform: none;
+  font-family: var(--secondaryFont);
+  letter-spacing: 0px;
+}
+.footerLinks h4 {
+  color: var(--color2);
+  font-size: .9rem;
+  text-transform: none;
+}
+.franchise {
+  width: min(600px,42%);
+}
+.franchise > a{
+  width:100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: none;
+  color:black;
+  gap:1.5rem;
+  border: 1px solid var(--color0);
+  border-radius: .5rem;
+  padding: 1rem;
+}
+
+
+/*******************************************************************************************/
 
 /* When the browser is 833px or wider */
 @media screen and (min-width: 833px) {
@@ -245,12 +310,45 @@ a {
     display: none !important;
   }
 
+  .navContainer {
+    height: 114px;
+  }
+  .topNav {
+    height:55%
+  }
+  .bottomNav {
+    height:45%
+  }
+
   .menu {
     padding-left: 0rem;
   }
   .logo {
     height: 1.6rem;
     padding-left: 0rem;
-    
   }
+  .logo img {
+    transform: scale(.75) translateX(-21px);
+  }
+
+  footer {
+    padding:1.5rem;
+  }
+  .footerContentWidthControl {
+    flex-direction: column;
+  }
+  .footerLinks {
+    width: 100%;
+  }
+  .franchise {
+    width:100%;
+    padding: 1.5rem 0rem;
+    border-bottom: 1px solid var(--color0);
+  }
+
+
+}
+
+@media screen and (max-width:639px) {
+  
 }
