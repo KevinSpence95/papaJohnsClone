@@ -60,8 +60,16 @@ shoppingCartTarget.addEventListener("click", () => {
   changeMain("specials");
 });
 
+let footerLinks = document.querySelectorAll('.footerLinks > div');
 
-
+footerLinks.forEach((link) => {
+  let hiddenLinks = link.querySelector('ul')
+  hiddenLinks.classList.add('hiddenOnSmallScreens')
+  link.querySelector('h4').addEventListener('click',() => {
+    console.log(link.querySelector('h4'))
+    hiddenLinks.classList.toggle('hiddenOnSmallScreens')
+  })
+})
 // const logoTarget = document.querySelector(".logo img");
 // logoTarget.onClick = () => {changeMain('specials')}
 // logoTarget.addEventListener("click", changeMain("specials"));

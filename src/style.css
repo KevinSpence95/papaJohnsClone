@@ -1,5 +1,5 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap"); */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
 *,
 *::before,
 *::after {
@@ -17,13 +17,13 @@
   --color0: rgb(209, 209, 209);
   --color1: white;
   --color2: black;
-  --color3: #38A575;
-  --color4: #CE2735;
+  --color3: #38a575;
+  --color4: #ce2735;
   --color5: rgb(230, 230, 230);
   --color6: rgb(46, 46, 46);
   --color7: rgb(98, 98, 98);
-  --mainFont:'Oswald', sans-serif;
-  --secondaryFont: Helvetica,Arial,sans-serif;
+  --mainFont: "Oswald", sans-serif;
+  --secondaryFont: Helvetica, Arial, sans-serif;
 }
 
 /* make these items responsive */
@@ -46,7 +46,7 @@ select {
 body {
   min-height: 100%;
   /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
-  font-family:var(--mainFont);
+  font-family: var(--mainFont);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -81,7 +81,7 @@ a {
   height: 50%;
 }
 .topNav li {
-  margin: .5rem;
+  margin: 0.5rem;
 }
 .topNav li:first-child {
   margin-right: auto;
@@ -89,8 +89,8 @@ a {
 .topNav a {
   height: 50%;
   color: var(--color2);
-  padding:.5rem;
-  border-radius: .3rem;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
 }
 .startYourOrder > a,
 .language > a,
@@ -98,8 +98,8 @@ a {
   gap: 0.25rem;
   transition: background-color 150ms ease-in;
 }
-.startYourOrder > a:hover, 
-.language > a:hover, 
+.startYourOrder > a:hover,
+.language > a:hover,
 .login > a:hover {
   background-color: var(--color5);
 }
@@ -112,8 +112,7 @@ a {
 .logo {
   /* width: 8rem; */
   height: 1.6rem;
-  padding-left: max(4vw,32px);
-
+  padding-left: max(4vw, 32px);
 }
 .logoIMG {
   width: 100%;
@@ -122,7 +121,8 @@ a {
   cursor: pointer;
 }
 .filtered {
-  filter: brightness(0) saturate(100%) invert(29%) sepia(67%) saturate(5198%) hue-rotate(341deg) brightness(83%) contrast(94%);
+  filter: brightness(0) saturate(100%) invert(29%) sepia(67%) saturate(5198%)
+    hue-rotate(341deg) brightness(83%) contrast(94%);
   /* https://stackoverflow.com/questions/22252472/how-can-i-change-the-color-of-an-svg-element*/
 }
 .signUp > a:hover {
@@ -149,8 +149,8 @@ a {
 .specials > a,
 .papaRewards > a {
   height: 100%;
-  padding-left: .5rem;
-  padding-right: .5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   font-size: larger;
 }
 .menu > a:hover,
@@ -160,16 +160,16 @@ a {
   padding-top: 4px; /*stops text from moving upwards when border is added on hover*/
 }
 .menu {
-  padding-left: max(4vw,32px)
+  padding-left: max(4vw, 32px);
 }
 .login2 > a {
-  padding:.5rem;
+  padding: 0.5rem;
   border-radius: 2rem;
-  color:var(--color1);
+  color: var(--color1);
   background-color: var(--color2);
   border: 1px solid var(--color2);
-  margin-right: .5rem;
-  font-size:.8rem;
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
 }
 
 .promoCodeForm {
@@ -177,42 +177,42 @@ a {
 }
 
 .promoCodeForm > input {
-  padding:.35rem;
+  padding: 0.35rem;
   border: 1px solid var(--color2);
 }
 .promoCodeForm > input:first-child {
-  border-top-left-radius: .3rem;
-  border-bottom-left-radius: .3rem;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
   border-right: none;
   position: relative;
 }
 .promoCodeForm > input:first-child:focus {
   border-color: var(--color3);
-  outline:none;
+  outline: none;
 }
 .promoCodeForm > input:first-child::placeholder {
   font-style: italic;
-  font-family: Cambria, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Georgia, Times, "Times New Roman", serif;
   font-size: smaller;
   position: absolute;
-  top:.6rem;
+  top: 0.6rem;
 }
 
 .promoCodeForm > input:first-child {
-  border-top-left-radius: .3rem;
-  border-bottom-left-radius: .3rem;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
   margin-left: 1rem;
 }
 
 .promoCodeForm > input:nth-child(2) {
-  border-top-right-radius: .3rem;
-  border-bottom-right-radius: .3rem;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
   background-color: var(--color2);
-  color:var(--color1);
+  color: var(--color1);
   position: relative;
   right: 4px;
   margin-right: 1rem;
-} 
+}
 
 .cart {
   border-left: 1px solid var(--color0);
@@ -227,13 +227,14 @@ a {
   position: relative;
 }
 .cart > span::before {
-  content:'$';
+  content: "$";
   color: var(--color4);
   font-size: 1rem;
   position: relative;
   bottom: 5px;
 }
-.login2 > a:hover, .promoCodeForm input[type=submit]:hover {
+.login2 > a:hover,
+.promoCodeForm input[type="submit"]:hover {
   background-color: var(--color6);
 }
 
@@ -243,8 +244,8 @@ footer {
   display: flex;
   justify-content: center;
   border-top: var(--color0) 1px solid;
-  
-  padding:1.5rem max(4rem,8vw);
+
+  padding: 1.5rem max(4rem, 8vw);
 }
 .footerContentWidthControl {
   width: 100%;
@@ -252,7 +253,7 @@ footer {
   justify-content: center;
 }
 .footerLinks {
-  width: calc(100% - min(600px,42%));
+  width: calc(100% - min(600px, 42%));
   display: flex;
   align-items: baseline;
 }
@@ -260,8 +261,8 @@ footer {
   margin-right: auto;
 }
 .footerLinks a {
-  color:grey;
-  font-size: .75rem;
+  color: grey;
+  font-size: 0.75rem;
   text-transform: none;
   font-family: var(--secondaryFont);
   letter-spacing: 0px;
@@ -271,24 +272,24 @@ footer {
 }
 .footerLinks h4 {
   color: var(--color2);
-  font-size: .9rem;
+  font-size: 0.9rem;
   text-transform: none;
 }
 .franchise {
-  width: min(600px,42%);
+  width: min(600px, 42%);
 }
-.franchise > a{
-  width:100%;
+.franchise > a {
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   text-transform: none;
-  color:black;
-  gap:1.5rem;
+  color: black;
+  gap: 1.5rem;
   border: 1px solid var(--color0);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   padding: 1rem;
-  transition: box-shadow 150ms ease-in
+  transition: box-shadow 150ms ease-in;
 }
 .franchise a:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -320,12 +321,16 @@ footer {
     height: 114px;
   }
   .topNav {
-    height:55%
+    height: 55%;
   }
   .bottomNav {
-    height:45%
+    height: 45%;
   }
-
+  .menu > a,
+  .specials > a,
+  .papaRewards > a {
+    font-size: 1rem;
+  }
   .menu {
     padding-left: 0rem;
   }
@@ -334,11 +339,11 @@ footer {
     padding-left: 0rem;
   }
   .logo img {
-    transform: scale(.75) translateX(-21px);
+    transform: scale(0.75) translateX(-21px);
   }
 
   footer {
-    padding:1.5rem;
+    padding: 1.5rem;
   }
   .footerContentWidthControl {
     flex-direction: column;
@@ -347,37 +352,63 @@ footer {
     width: 100%;
   }
   .franchise {
-    width:100%;
+    width: 100%;
     padding: 1.5rem 0rem;
     border-bottom: 1px solid var(--color0);
   }
-
-
 }
 
-@media screen and (max-width:639px) {
-.ourCompany a, .ourPizza a, .help a{
-  display: none;
-}
+@media screen and (max-width: 639px) {
+  .ourCompany ul,
+  .ourPizza ul,
+  .help ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1px;
+  }
+  .hiddenOnSmallScreens {
+    display: none !important;
+  }
 
-.footerLinks {
-  flex-direction: column;
+  .footerLinks {
+    /* background-color: peachpuff; */
+    flex-direction: column;
+  }
 
-}
+  .footerLinks h4 {
+    /* background-color: #38a575; */
+    margin: 0.75rem 0rem 0.25rem 0rem;
+    padding: 0.25rem 0rem;
+    border-bottom: 1px solid var(--color0);
+  }
 
-.ourCompany, .ourPizza, .help {
-  width:100%;
-  position: relative;
-  border-bottom: 1px solid var(--color0);
-  padding-bottom: .5rem;
-  margin-top: 1rem;
-}
+  .ourCompany,
+  .ourPizza,
+  .help {
+    /* background-color: pink; */
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-top: 2px;
+  }
 
-.ourCompany li:first-child::after,.ourPizza li:first-child::after,.help li:first-child::after{
+  h4::after {
+    content: url(assets/chevron-down.svg);
+    position: absolute;
+    right: -5px;
+    top: 1rem;
+  }
+
+  .footerLinks li {
+    height: auto;
+  }
+  /* .ourCompany li:first-child::after,.ourPizza li:first-child::after,.help li:first-child::after{
   content: url(assets/chevron-down.svg);
   position: absolute;
   right: 0px;
   top: .25rem;
-}
-
+} */
 }
