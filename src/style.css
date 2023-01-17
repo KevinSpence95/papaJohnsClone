@@ -50,7 +50,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-
+/*******************************************************************************************/
 ul {
   margin: 0;
   padding: 0;
@@ -76,13 +76,13 @@ a {
   display: flex;
   align-items: center;
 }
-/**************/
 .topNav {
   height: 50%;
 }
 .topNav li {
   margin: 0.5rem;
 }
+
 .topNav li:first-child {
   margin-right: auto;
 }
@@ -112,7 +112,7 @@ a {
 .logo {
   /* width: 8rem; */
   height: 1.6rem;
-  padding-left: max(4vw, 32px);
+  padding-left: 4vw;
 }
 .logoIMG {
   width: 100%;
@@ -127,6 +127,10 @@ a {
 }
 .signUp > a:hover {
   background-color: var(--color6);
+}
+.signUp {
+  /* background-color: pink; */
+  margin-right: 4vw !important;
 }
 
 /*******************************************************************************************/
@@ -160,7 +164,7 @@ a {
   padding-top: 4px; /*stops text from moving upwards when border is added on hover*/
 }
 .menu {
-  padding-left: max(4vw, 32px);
+  padding-left: 4vw;
 }
 .login2 > a {
   padding: 0.5rem;
@@ -171,11 +175,9 @@ a {
   margin-right: 0.5rem;
   font-size: 0.8rem;
 }
-
 .promoCodeForm {
   position: relative;
 }
-
 .promoCodeForm > input {
   padding: 0.35rem;
   border: 1px solid var(--color2);
@@ -216,7 +218,8 @@ a {
 
 .cart {
   border-left: 1px solid var(--color0);
-  padding: 1rem;
+  padding: 1rem 0rem 1rem 1rem;
+  margin-right:4vw !important;
 }
 .cart > svg {
   margin-right: 0.25rem;
@@ -242,9 +245,9 @@ a {
 
 footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   border-top: var(--color0) 1px solid;
-
   padding: 1.5rem max(4rem, 8vw);
 }
 .footerContentWidthControl {
@@ -260,14 +263,14 @@ footer {
 .footerLinks > div {
   margin-right: auto;
 }
-.footerLinks a {
+footer a {
   color: grey;
   font-size: 0.75rem;
   text-transform: none;
   font-family: var(--secondaryFont);
   letter-spacing: 0px;
 }
-.footerLinks a:hover {
+footer a:hover {
   text-decoration: underline;
 }
 .footerLinks h4 {
@@ -294,6 +297,56 @@ footer {
 .franchise a:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.footerBottom {
+  margin-top: 2rem;
+  padding-top:1.75rem;
+  border-top: 1px solid var(--color0);
+  /* background-color: pink; */
+  display: flex;
+  align-items: baseline;
+}
+.countrySelect {
+  width: fit-content;
+  font-family: var(--secondaryFont);
+  font-size: .75rem;
+  padding: .5rem;
+  border-radius:5px;
+  margin-right: 1rem;
+}
+.countrySelect:focus {
+  border: 1px solid var(--color3);
+  outline: none;
+}
+.legalLinks{
+ display:flex;
+ gap:.75rem;
+ flex-wrap: wrap;
+ margin: .5rem auto 1rem 0rem;
+}
+.legalLinks li {
+  /* background-color: aquamarine; */
+  display: flex;
+}
+.footerBottom {
+  position:relative;
+}
+.socialMediaLinkIcons {
+  position:relative;
+  right:0;
+  top:6px;
+  /* align-self: baseline; */
+  display: flex;
+  align-items: center;
+  gap:.75rem;
+  margin-left: 1rem;
+  /* background-color: #38a575; */
+}
+.socialMediaLinkIcons svg {
+  transition: color 400ms ease-in-out;
+}
+.socialMediaLinkIcons svg:hover {
+  color:black;
+}
 
 /*******************************************************************************************/
 
@@ -316,7 +369,6 @@ footer {
   .desktop {
     display: none !important;
   }
-
   .navContainer {
     height: 114px;
   }
@@ -341,7 +393,6 @@ footer {
   .logo img {
     transform: scale(0.75) translateX(-21px);
   }
-
   footer {
     padding: 1.5rem;
   }
@@ -353,8 +404,15 @@ footer {
   }
   .franchise {
     width: 100%;
-    padding: 1.5rem 0rem;
-    border-bottom: 1px solid var(--color0);
+    padding-top: 1.5rem;
+    /* border-bottom: 1px solid var(--color0); */
+  }
+  .legalLinks {
+    margin-top:1.5rem;
+  }
+  .socialMediaLinkIcons {
+    align-self: flex-start;
+    margin-left: 0;
   }
 }
 
@@ -371,19 +429,16 @@ footer {
   .hiddenOnSmallScreens {
     display: none !important;
   }
-
   .footerLinks {
     /* background-color: peachpuff; */
     flex-direction: column;
   }
-
   .footerLinks h4 {
     /* background-color: #38a575; */
     margin: 0.75rem 0rem 0.25rem 0rem;
     padding: 0.25rem 0rem;
     border-bottom: 1px solid var(--color0);
   }
-
   .ourCompany,
   .ourPizza,
   .help {
@@ -394,21 +449,13 @@ footer {
     padding-bottom: 0.5rem;
     margin-top: 2px;
   }
-
   h4::after {
     content: url(assets/chevron-down.svg);
     position: absolute;
     right: -5px;
     top: 1rem;
   }
-
   .footerLinks li {
     height: auto;
   }
-  /* .ourCompany li:first-child::after,.ourPizza li:first-child::after,.help li:first-child::after{
-  content: url(assets/chevron-down.svg);
-  position: absolute;
-  right: 0px;
-  top: .25rem;
-} */
 }
