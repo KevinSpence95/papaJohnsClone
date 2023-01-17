@@ -6,7 +6,7 @@ import papaRewards from "./papaRewards";
 
 // import Mountains from "./Mountains.jpg";
 
-let main = document.body.querySelector(".mainContent");
+const main = document.body.querySelector(".mainContent");
 
 function changeMain(page) {
   main.removeChild(main.firstChild);
@@ -15,61 +15,89 @@ function changeMain(page) {
     contentElement = home();
   } else if (page == "menu") {
     contentElement = menu();
+    menuTarget.classList.add("active");
+    specialsTarget.classList.remove("active");
+    papaRewardsTarget.classList.remove("active");
   } else if (page == "specials") {
     contentElement = specials();
+    specialsTarget.classList.add("active");
+    menuTarget.classList.remove("active");
+    papaRewardsTarget.classList.remove("active");
   } else if (page == "papa rewards") {
     contentElement = papaRewards();
+    papaRewardsTarget.classList.add("active");
+    specialsTarget.classList.remove("active");
+    menuTarget.classList.remove("active");
   }
   main.appendChild(contentElement);
 }
 
-changeMain("home");
-
-let logoTarget = document.querySelector(".logo img");
+const logoTarget = document.querySelector(".logo img");
 logoTarget.addEventListener("click", () => {
   changeMain("home");
 });
 
-let syoTarget = document.querySelector(".startYourOrder a");
+const syoTarget = document.querySelector(".startYourOrder a");
 syoTarget.addEventListener("click", () => {
   changeMain("specials");
 });
 
-let signUpTarget = document.querySelector(".signUp a");
+const signUpTarget = document.querySelector(".signUp a");
 signUpTarget.addEventListener("click", () => {
   changeMain("home");
 });
 
-let menuTarget = document.querySelector(".menu a");
+const menuTarget = document.querySelector(".menu a");
 menuTarget.addEventListener("click", () => {
   changeMain("menu");
+  menuTarget.classList.toggle(".active");
 });
 
-let specialsTarget = document.querySelector(".specials a");
+const specialsTarget = document.querySelector(".specials a");
 specialsTarget.addEventListener("click", () => {
   changeMain("specials");
 });
 
-let papaRewardsTarget = document.querySelector(".papaRewards a");
+const papaRewardsTarget = document.querySelector(".papaRewards a");
 papaRewardsTarget.addEventListener("click", () => {
   changeMain("papa rewards");
 });
 
-let shoppingCartTarget = document.querySelector(".cart");
+const shoppingCartTarget = document.querySelector(".cart");
 shoppingCartTarget.addEventListener("click", () => {
   changeMain("specials");
 });
 
-let footerLinks = document.querySelectorAll('.footerLinks > div');
+const footerLinks = document.querySelectorAll(".footerLinks > div");
 
-footerLinks.forEach((link) => {
-  let hiddenLinks = link.querySelector('ul')
-  hiddenLinks.classList.add('hiddenOnSmallScreens')
-  link.querySelector('h4').addEventListener('click',() => {
-    console.log(link.querySelector('h4'))
-    hiddenLinks.classList.toggle('hiddenOnSmallScreens')
-  })
-})
-// const logoTarget = document.querySelector(".logo img");
-// logoTarget.onClick = () => {changeMain('specials')}
-// logoTarget.addEventListener("click", changeMain("specials"));
+// footerLinks.forEach((link) => {
+//   let hiddenLinks = link.querySelector("ul");
+//   link.querySelector("h4").addEventListener("click", () => {
+//     hiddenLinks.classList.toggle("hiddenOnSmallScreens");
+//   });
+// });
+
+let ourCompany = document.querySelector(".ourCompany");
+ourCompany.querySelector("h4").addEventListener("click", () => {
+  ourCompany.querySelector('ul').classList.toggle("hiddenOnSmallScreens");
+  ourPizza.querySelector('ul').classList.add("hiddenOnSmallScreens");
+  help.querySelector('ul').classList.add("hiddenOnSmallScreens");
+});
+let ourPizza = document.querySelector(".ourPizza");
+ourPizza.querySelector("h4").addEventListener("click", () => {
+  ourPizza.querySelector('ul').classList.toggle("hiddenOnSmallScreens");
+  ourCompany.querySelector('ul').classList.add("hiddenOnSmallScreens");
+  help.querySelector('ul').classList.add("hiddenOnSmallScreens");
+});
+let help = document.querySelector(".help");
+help.querySelector("h4").addEventListener("click", () => {
+  help.querySelector('ul').classList.toggle("hiddenOnSmallScreens");
+  ourPizza.querySelector('ul').classList.add("hiddenOnSmallScreens");
+  ourCompany.querySelector('ul').classList.add("hiddenOnSmallScreens");
+});
+// console.log(ourCompany);
+// console.log(ourPizza);
+// console.log(help);
+
+//initial state
+changeMain("home");

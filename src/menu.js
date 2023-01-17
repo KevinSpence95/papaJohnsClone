@@ -1,6 +1,8 @@
-export default function menu() {
-    let content = document.createElement('div')
-    content.textContent = 'MENU'
+import "./menu.css";
 
-    return content;
+export default function menu() {
+  let content = document.createElement("div");
+  content.classList.add("main__menu");
+  content.textContent = "MENU";
+  return content;
 }

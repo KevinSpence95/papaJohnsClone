@@ -163,6 +163,10 @@ a {
   border-bottom: 4px solid var(--color3);
   padding-top: 4px; /*stops text from moving upwards when border is added on hover*/
 }
+.active {
+  border-bottom: 4px solid var(--color3);
+  padding-top: 4px;
+}
 .menu {
   padding-left: 4vw;
 }
@@ -220,6 +224,7 @@ a {
   border-left: 1px solid var(--color0);
   padding: 1rem 0rem 1rem 1rem;
   margin-right:4vw !important;
+  cursor: pointer;
 }
 .cart > svg {
   margin-right: 0.25rem;
