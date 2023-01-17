@@ -266,6 +266,9 @@ footer {
   font-family: var(--secondaryFont);
   letter-spacing: 0px;
 }
+.footerLinks a:hover {
+  text-decoration: underline;
+}
 .footerLinks h4 {
   color: var(--color2);
   font-size: .9rem;
@@ -285,8 +288,11 @@ footer {
   border: 1px solid var(--color0);
   border-radius: .5rem;
   padding: 1rem;
+  transition: box-shadow 150ms ease-in
 }
-
+.franchise a:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
 /*******************************************************************************************/
 
@@ -350,5 +356,28 @@ footer {
 }
 
 @media screen and (max-width:639px) {
-  
+.ourCompany a, .ourPizza a, .help a{
+  display: none;
+}
+
+.footerLinks {
+  flex-direction: column;
+
+}
+
+.ourCompany, .ourPizza, .help {
+  width:100%;
+  position: relative;
+  border-bottom: 1px solid var(--color0);
+  padding-bottom: .5rem;
+  margin-top: 1rem;
+}
+
+.ourCompany li:first-child::after,.ourPizza li:first-child::after,.help li:first-child::after{
+  content: url(assets/chevron-down.svg);
+  position: absolute;
+  right: 0px;
+  top: .25rem;
+}
+
 }
