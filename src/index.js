@@ -1,8 +1,8 @@
 import "./style.css";
-import home from "./home";
-import menu from "./menu";
-import specials from "./specials";
-import papaRewards from "./papaRewards";
+import home from "./home/home";
+import menu from "./menu/menu";
+import specials from "./specials/specials";
+import papaRewards from "./papaRewards/papaRewards";
 
 // import Mountains from "./Mountains.jpg";
 

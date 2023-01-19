@@ -127,6 +127,20 @@ a {
   margin-right: 4vw !important;
 }
 
+/*popup styling*/
+.hide-popup {
+  opacity: 0;
+}
+.language {
+  position: relative;
+}
+.language-popup {
+  position: absolute;
+  background-color: rgba(149, 157, 165, 0.2);
+  top:400px;
+  color: green;
+  
+}
 /*******************************************************************************************/
 
 .bottomNav {
@@ -453,3 +467,7 @@ footer a:hover {
     height: auto;
   }
 }
+/*******************************************************************************************/
+/*home.css*/
+
+/*******************************************************************************************/
