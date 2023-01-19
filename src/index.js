@@ -79,25 +79,22 @@ const footerLinks = document.querySelectorAll(".footerLinks > div");
 
 let ourCompany = document.querySelector(".ourCompany");
 ourCompany.querySelector("h4").addEventListener("click", () => {
-  ourCompany.querySelector('ul').classList.toggle("hiddenOnSmallScreens");
-  ourPizza.querySelector('ul').classList.add("hiddenOnSmallScreens");
-  help.querySelector('ul').classList.add("hiddenOnSmallScreens");
+  ourCompany.querySelector("ul").classList.toggle("hiddenOnSmallScreens");
+  ourPizza.querySelector("ul").classList.add("hiddenOnSmallScreens");
+  help.querySelector("ul").classList.add("hiddenOnSmallScreens");
 });
 let ourPizza = document.querySelector(".ourPizza");
 ourPizza.querySelector("h4").addEventListener("click", () => {
-  ourPizza.querySelector('ul').classList.toggle("hiddenOnSmallScreens");
-  ourCompany.querySelector('ul').classList.add("hiddenOnSmallScreens");
-  help.querySelector('ul').classList.add("hiddenOnSmallScreens");
+  ourPizza.querySelector("ul").classList.toggle("hiddenOnSmallScreens");
+  ourCompany.querySelector("ul").classList.add("hiddenOnSmallScreens");
+  help.querySelector("ul").classList.add("hiddenOnSmallScreens");
 });
 let help = document.querySelector(".help");
 help.querySelector("h4").addEventListener("click", () => {
-  help.querySelector('ul').classList.toggle("hiddenOnSmallScreens");
-  ourPizza.querySelector('ul').classList.add("hiddenOnSmallScreens");
-  ourCompany.querySelector('ul').classList.add("hiddenOnSmallScreens");
+  help.querySelector("ul").classList.toggle("hiddenOnSmallScreens");
+  ourPizza.querySelector("ul").classList.add("hiddenOnSmallScreens");
+  ourCompany.querySelector("ul").classList.add("hiddenOnSmallScreens");
 });
-// console.log(ourCompany);
-// console.log(ourPizza);
-// console.log(help);
 
 //initial state
 changeMain("home");
