@@ -45,7 +45,11 @@ syoTarget.addEventListener("click", () => {
 const languageTarget = document.querySelector(".language a");
 const languagePopup = document.querySelector(".language-popup");
 languageTarget.addEventListener("click", () => {
-  console.log("clicked target");
+  //if the login popup is still open, close the login popup and then open the language popup
+  if (!loginPopup.classList.contains("hide-popup")) {
+    loginPopup.classList.toggle("hide-popup");
+    document.activeElement.blur();
+  }
   languagePopup.classList.toggle("hide-popup");
   languageTarget.focus();
 });
@@ -53,6 +57,11 @@ languageTarget.addEventListener("click", () => {
 const loginTarget = document.querySelector(".login a");
 const loginPopup = document.querySelector(".login-popup");
 loginTarget.addEventListener("click", () => {
+  //if the language popup is still open, close the language popup and then open the login popup
+  if (!languagePopup.classList.contains("hide-popup")) {
+    languagePopup.classList.toggle("hide-popup");
+    document.activeElement.blur();
+  }
   loginPopup.classList.toggle("hide-popup");
   loginTarget.focus();
 });
@@ -60,20 +69,37 @@ loginTarget.addEventListener("click", () => {
 //process closing the popups when the user clicks elsewhere besides the popups
 document.addEventListener("click", (e) => {
   console.log(e.target.closest("a"));
-  //if languagePopup is hidden
-  if (languagePopup.classList.contains("hide-popup")) {
+  //if both popups are hidden
+  if (
+    languagePopup.classList.contains("hide-popup") &&
+    loginPopup.classList.contains("hide-popup")
+  ) {
     return; //do nothing
   } else {
-    //otherwise proceed assuming languagePopup is open (not hidden)
-    //if the user clicked somewhere that is NOT the languagePopup element or its children
-    //AND not the popup trigger element, close the langaugePopup and unfocus the trigger
-    if (
-      e.target !== languagePopup &&
-      e.target.closest(".language-popup") !== languagePopup &&
-      e.target.closest("a") !== languageTarget
-    ) {
-      languagePopup.classList.toggle("hide-popup");
-      document.activeElement.blur();
+    //if it's the language popup that open,
+    if (loginPopup.classList.contains("hide-popup")) {
+      //and the click isnt on the language popup, its children or its target
+      if (
+        e.target !== languagePopup &&
+        e.target.closest(".language-popup") !== languagePopup &&
+        e.target.closest("a") !== languageTarget
+      ) {
+        //close the language popup and unfocus the trigger
+        languagePopup.classList.toggle("hide-popup");
+        document.activeElement.blur();
+      }
+      //if it's the login popup that open,
+    } else if (languagePopup.classList.contains("hide-popup")) {
+      //and the click isnt on the login popup, its children or its target
+      if (
+        e.target !== loginPopup &&
+        e.target.closest(".login-popup") !== loginPopup &&
+        e.target.closest("a") !== loginTarget
+      ) {
+        //close the login popup and unfocus the trigger
+        loginPopup.classList.toggle("hide-popup");
+        document.activeElement.blur();
+      }
     }
   }
 });
