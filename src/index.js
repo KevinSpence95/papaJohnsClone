@@ -9,7 +9,7 @@ import papaRewards from "./papaRewards/papaRewards";
 const main = document.body.querySelector(".mainContent");
 
 function changeMain(page) {
-  main.innerHTML = '';
+  main.innerHTML = "";
   let contentElement;
   if (page == "home") {
     contentElement = home();
@@ -50,18 +50,28 @@ languageTarget.addEventListener("click", () => {
   languageTarget.focus();
 });
 
+const loginTarget = document.querySelector(".login a");
+const loginPopup = document.querySelector(".login-popup");
+loginTarget.addEventListener("click", () => {
+  loginPopup.classList.toggle("hide-popup");
+  loginTarget.focus();
+});
+
+//process closing the popups when the user clicks elsewhere besides the popups
 document.addEventListener("click", (e) => {
-  console.log(e.target.closest('a'))
+  console.log(e.target.closest("a"));
+  //if languagePopup is hidden
   if (languagePopup.classList.contains("hide-popup")) {
-    console.log('popup already hidden doing nothing')
-    return;
-  } else { //when popup is visible
+    return; //do nothing
+  } else {
+    //otherwise proceed assuming languagePopup is open (not hidden)
+    //if the user clicked somewhere that is NOT the languagePopup element or its children
+    //AND not the popup trigger element, close the langaugePopup and unfocus the trigger
     if (
       e.target !== languagePopup &&
       e.target.closest(".language-popup") !== languagePopup &&
-      e.target.closest('a') !== languageTarget
+      e.target.closest("a") !== languageTarget
     ) {
-      console.log('closing popup')
       languagePopup.classList.toggle("hide-popup");
       document.activeElement.blur();
     }

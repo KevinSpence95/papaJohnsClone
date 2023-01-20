@@ -133,11 +133,12 @@ a {
   margin-right: 4vw !important;
 }
 
-/*popup styling*/
+/*language popup styling*/
 .language {
   position: relative;
 }
 .language-popup {
+  z-index: 99;
   opacity: 1;
   position: absolute;
   background-color: var(--color1);
@@ -146,13 +147,12 @@ a {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   top: 100%;
   right: -104px;
-  z-index: 99;
   font-size: 1rem;
   text-transform: none;
   color: black;
   height: 148px;
   width: 288px;
-  padding: 1.5rem;
+  padding: 1rem 1.75rem 1.5rem 1.75rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -168,17 +168,13 @@ a {
   top: -0.1rem;
   left: 45%;
 }
-.hide-popup {
-  opacity: 0;
-  z-index: 1;
-  /* display: hidden; */
-}
 
 .language-popup h3 {
   display: inline-block;
   width: 100%;
-  font-size: 1rem;
+  font-size: 1.15rem;
   padding-bottom: 0.55rem;
+  margin-bottom: 1rem;
   border-bottom: 1px solid var(--color0);
 }
 .language-popup ul {
@@ -200,6 +196,139 @@ a {
 }
 .language-popup a:hover {
   text-decoration: underline;
+}
+
+/*login popup styling NEEDS WORK*/
+.login {
+  position: relative;
+}
+.login-popup {
+  z-index: 99;
+  opacity: 1;
+  position: absolute;
+  background-color: var(--color1);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  top: 100%;
+  right: 0;
+  text-transform: none;
+  color: black;
+  height: 340px;
+  width: 288px;
+  padding: 1rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+.login-popup::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: var(--color1);
+  transform: rotate(55deg) skew(20deg);
+  top: -0.1rem;
+  left: 80.5%;
+}
+.login-popup h3 {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.15rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--color0);
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap:1.15rem;
+}
+.loginFormSection {
+  display: flex;
+  flex-direction: column;
+}
+.loginFormSection label{
+  font-size: .75rem;
+  font-family: var(--secondaryFont);
+  color: var(--color7);
+}
+.loginForm input:not([type=checkbox]) {
+  outline:none;
+  border: 1px solid var(--color7);
+  border-radius: 6px;
+  padding: .25rem;
+  margin-top: 4px;
+}
+.loginForm input:not([type=checkbox]):focus {
+  border:1px solid var(--color3);
+}
+.loginFormSection:nth-child(2){
+ position:relative;
+}
+.loginFormSection:nth-child(2) a{
+ position:absolute;
+ left:38.5%;
+ bottom:18px;
+} 
+.loginFormSection:nth-child(3) label:first-child{
+  position: absolute;
+  font-size: .85rem;
+  left:50px;
+  bottom:121px;
+ }
+.rememberMe{
+  accent-color: var(--color3);
+  width:1rem;
+  height:1rem;
+
+ }
+.rememberMe+label{
+  margin-top: 4px;
+ }
+ .loginFormSection:nth-child(4) button {
+  text-transform: uppercase;
+  font-size: .9rem;
+  color: var(--color1);
+  background-color: var(--color2);
+  border: 1px solid var(--color2);
+  padding: .25rem .65rem;;
+  border-radius: 1rem;
+  width: fit-content;
+  margin-bottom: 1rem;
+  cursor: pointer;
+ }
+ .loginFormSection:nth-child(4) button:hover {
+  background-color: var(--color6);
+ }
+ .loginFormSection:nth-child(4) div {
+  display: flex;
+  font-family: var(--secondaryFont);
+  color:var(--color7);
+  font-size: .75rem;
+ }
+ .loginFormSection:nth-child(4) a {
+  display: inline-block;
+  height:fit-content;
+  width: fit-content;
+  padding: 0;
+  margin-left: .5rem;
+ }
+
+.login-popup a {
+  font-family: var(--secondaryFont);
+  color: var(--color3);
+  height: 100%;
+  width: 100%;
+  font-size: .75rem;
+}
+.login-popup a:hover {
+  text-decoration: underline;
+}
+
+/*for language AND login popups*/
+.hide-popup {
+  opacity: 0;
+  z-index: 1;
 }
 
 /*******************************************************************************************/
@@ -339,7 +468,7 @@ footer {
   margin-right: auto;
 }
 footer a {
-  color: grey;
+  color: var(--color7);
   font-size: 0.75rem;
   text-transform: none;
   font-family: var(--secondaryFont);

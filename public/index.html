@@ -58,13 +58,15 @@
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </a>
-             <div class="language-popup hide-popup"> <!--hide-popup -->
+            <!-- Language Popup -->
+            <div class="language-popup hide-popup">
               <h3>Choose Your Language</h3>
               <ul>
                 <li><a href="#">English</a></li>
                 <li><a href="#">Español</a></li>
               </ul>
             </div>
+            <!------------>
           </li>
           <li class="desktop login">
             <a href="#">
@@ -84,16 +86,34 @@
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </a>
-            <!-- <div class="login-popup">
+            <!-- Login Popup -->
+            <div class="login-popup hide-popup"><!--hide-popup -->
               <h3>Log In</h3>
-              <form action="">
-                <label for="email">Email Address *</label>
-                <input type="email" name="email">
-                <label for="password">Password *</label>
-                <input type="password" name="password">
-                <input type="checkbox" name="keepSignedIn">
+              <form action="" class="loginForm">
+                <div class = 'loginFormSection'>
+                  <label for="email">Email Address *</label>
+                  <input type="email" name="email" />
+                </div>
+                <div class = 'loginFormSection'>
+                  <label for="password">Password *</label>
+                  <input type="password" name="password" />
+                  <a href="#">Forgot your Password?</a>
+                </div>
+                <div class = 'loginFormSection'>
+                  <label for="rememberMe">Keep me signed in</label>
+                  <input type="checkbox" name="rememberMe" class="rememberMe"/>
+                  <label for="rememberMe">Uncheck if using a public device.</label>
+                </div>
+                <div class = 'loginFormSection'>
+                  <button type="submit">Log In</button>
+                  <div>
+                    <p>Dont have an account?</p>
+                    <a href="#">Sign Up</a>
+                  </div>
+                </div>
               </form>
-            </div> -->
+            </div>
+            <!------------>
           </li>
           <li class="mobile hamburger">
             <a href="#">
@@ -167,9 +187,9 @@
     </header>
 
     <main class="mainContent" style="height: 30vh">
-    <div class="hero">
+      <div class="hero">
         <h3>Starting at $13</h3>
-    </div>
+      </div>
     </main>
 
     <footer>
