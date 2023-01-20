@@ -49,6 +49,7 @@ body {
   letter-spacing: 0.5px;
 }
 /*******************************************************************************************/
+
 ul {
   margin: 0;
   padding: 0;
@@ -78,7 +79,6 @@ a {
 .topNav li {
   margin: 0.5rem;
 }
-
 .topNav li:first-child {
   margin-right: auto;
 }
@@ -97,6 +97,12 @@ a {
 .startYourOrder > a:hover,
 .language > a:hover,
 .login > a:hover {
+  background-color: var(--color5);
+  z-index: 100;
+}
+.startYourOrder > a:focus,
+.language > a:focus,
+.login > a:focus {
   background-color: var(--color5);
 }
 .signUp > a {
@@ -128,19 +134,70 @@ a {
 }
 
 /*popup styling*/
-.hide-popup {
-  opacity: 0;
-}
 .language {
   position: relative;
 }
 .language-popup {
+  opacity: 1;
   position: absolute;
-  background-color: rgba(149, 157, 165, 0.2);
-  top:400px;
-  color: green;
-  
+  background-color: var(--color1);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  top:100%;
+  right:-104px;
+  z-index: 99;
+  font-size: 1rem;
+  text-transform: none;
+  color:black;
+  height:148px;
+  width:288px;
+  padding:1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
+.language-popup::after {
+  position: absolute;
+  content: '';
+  width:20px;
+  height:20px;
+  background-color: var(--color1);
+  transform: rotate(55deg) skew(20deg) ;
+  top:-.1rem;
+  left:45%;
+}
+.hide-popup {
+  opacity: 0;
+}
+
+.language-popup h3 {
+  display: inline-block;
+  width:100%;
+  font-size: 1rem;
+  padding-bottom: .55rem;
+  border-bottom: 1px solid var(--color0);
+}
+.language-popup ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.language-popup li {
+  margin:0;
+  width:100%;
+}
+.language-popup a {
+  font-family: var(--secondaryFont);
+  color:var(--color3);
+  height: 100%;
+  width: 100%;
+  font-size: .75rem;
+}
+.language-popup a:hover {
+  text-decoration: underline;
+}
+
 /*******************************************************************************************/
 
 .bottomNav {

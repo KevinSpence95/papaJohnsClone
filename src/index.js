@@ -42,6 +42,32 @@ syoTarget.addEventListener("click", () => {
   changeMain("specials");
 });
 
+const languageTarget = document.querySelector(".language a");
+const languagePopup = document.querySelector(".language-popup");
+languageTarget.addEventListener("click", () => {
+  console.log("clicked target");
+  languagePopup.classList.toggle("hide-popup");
+  languageTarget.focus();
+});
+
+document.addEventListener("click", (e) => {
+  console.log(e.target.closest('a'))
+  if (languagePopup.classList.contains("hide-popup")) {
+    console.log('popup already hidden doing nothing')
+    return;
+  } else { //when popup is visible
+    if (
+      e.target !== languagePopup &&
+      e.target.closest(".language-popup") !== languagePopup &&
+      e.target.closest('a') !== languageTarget
+    ) {
+      console.log('closing popup')
+      languagePopup.classList.toggle("hide-popup");
+      document.activeElement.blur();
+    }
+  }
+});
+
 const signUpTarget = document.querySelector(".signUp a");
 signUpTarget.addEventListener("click", () => {
   changeMain("home");
