@@ -168,6 +168,8 @@ a {
 }
 .hide-popup {
   opacity: 0;
+  z-index: 1;
+  /* display: hidden; */
 }
 
 .language-popup h3 {
@@ -246,6 +248,7 @@ a {
 }
 .promoCodeForm {
   position: relative;
+  z-index: 50;
 }
 .promoCodeForm > input {
   padding: 0.35rem;

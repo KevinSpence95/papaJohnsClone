@@ -9,7 +9,7 @@ import papaRewards from "./papaRewards/papaRewards";
 const main = document.body.querySelector(".mainContent");
 
 function changeMain(page) {
-  main.removeChild(main.firstChild);
+  main.innerHTML = '';
   let contentElement;
   if (page == "home") {
     contentElement = home();
