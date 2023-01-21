@@ -109,6 +109,45 @@ signUpTarget.addEventListener("click", () => {
   changeMain("home");
 });
 
+//Hamburger Mobile Menu Functionalit
+const hamburger = document.querySelector(".hamburger a");
+const mobileMenu = document.querySelector(".mobileMenu");
+const pageOverlay = document.querySelector(".pageOverlay");
+const pageWrapper = document.querySelector(".pageWrapper");
+
+hamburger.addEventListener("click", () => {
+  mobileMenu.classList.add("showMobileMenu");
+  mobileMenu.classList.add("slideMobileMenuL");
+  pageOverlay.classList.add("darkenOverlay");
+  pageWrapper.classList.add("slidePageWrapperL");
+  pageOverlay.addEventListener(
+    "click",
+    () => {
+
+      pageOverlay.classList.remove("darkenOverlay");
+
+      pageWrapper.classList.add('slidPage');
+      pageWrapper.classList.remove('slidePageWrapperL');
+      pageWrapper.classList.add('slidePageWrapperR');
+
+      mobileMenu.classList.add("slidMenu");
+      mobileMenu.classList.remove("slideMobileMenuL");
+      mobileMenu.classList.add("slideMobileMenuR");
+
+      setTimeout(() => {
+        pageWrapper.classList.remove('slidPage');
+        pageWrapper.classList.remove('slidePageWrapperR');
+        mobileMenu.classList.remove('slidMenu')
+        mobileMenu.classList.remove('slideMobileMenuR')
+        mobileMenu.classList.remove("showMobileMenu");
+      },500)
+    },
+    { once: true }
+  );
+});
+
+//----------------------------------
+
 const menuTarget = document.querySelector(".menu a");
 menuTarget.addEventListener("click", () => {
   changeMain("menu");
