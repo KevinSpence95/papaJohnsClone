@@ -1,7 +1,8 @@
+import "./specials.css";
 export default function specials() {
-    let content = document.createElement('div')
-    content.classList.add('main__specials')
-    content.textContent = 'SPECIALS'
+  let content = document.createElement("div");
+  content.classList.add("main__specials");
+  content.textContent = "SPECIALS";
 
-    return content;
+  return content;
 }

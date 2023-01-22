@@ -123,24 +123,23 @@ hamburger.addEventListener("click", () => {
   pageOverlay.addEventListener(
     "click",
     () => {
-
       pageOverlay.classList.remove("darkenOverlay");
 
-      pageWrapper.classList.add('slidPage');
-      pageWrapper.classList.remove('slidePageWrapperL');
-      pageWrapper.classList.add('slidePageWrapperR');
+      pageWrapper.classList.add("slidPage");
+      pageWrapper.classList.remove("slidePageWrapperL");
+      pageWrapper.classList.add("slidePageWrapperR");
 
       mobileMenu.classList.add("slidMenu");
       mobileMenu.classList.remove("slideMobileMenuL");
       mobileMenu.classList.add("slideMobileMenuR");
 
       setTimeout(() => {
-        pageWrapper.classList.remove('slidPage');
-        pageWrapper.classList.remove('slidePageWrapperR');
-        mobileMenu.classList.remove('slidMenu')
-        mobileMenu.classList.remove('slideMobileMenuR')
+        pageWrapper.classList.remove("slidPage");
+        pageWrapper.classList.remove("slidePageWrapperR");
+        mobileMenu.classList.remove("slidMenu");
+        mobileMenu.classList.remove("slideMobileMenuR");
         mobileMenu.classList.remove("showMobileMenu");
-      },500)
+      }, 500);
     },
     { once: true }
   );

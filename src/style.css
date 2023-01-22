@@ -17,7 +17,7 @@
   --color1: white;
   --color2: black;
   --color3: #38a575;
-  --color4: #ce2735;
+  --color4: hsl(355, 68%, 48%);
   --color5: rgb(230, 230, 230);
   --color6: rgb(46, 46, 46);
   --color7: rgb(98, 98, 98);
@@ -702,6 +702,40 @@ footer a:hover {
     background-color: var(--color7);
     opacity: 0.5;
     z-index: 5000;
+  }
+
+  .mobileMenu ul {
+    /* background-color: chartreuse; */
+    height: fit-content;
+    margin: 1.25rem 1.75rem;
+  }
+  .mobileMenu li {
+    /* background-color: pink; */
+    padding: 1rem 0rem;
+  }
+  .mobileMenu li:not(:last-child) {
+    border-top: 1px solid var(--color0);
+  }
+  .mobileMenu a {
+    /* background-color: orange; */
+    color: var(--color2);
+    padding: 0.3rem 0.5rem;
+    border-radius: 1rem;
+  }
+  .mobileSignUp {
+    background-color: var(--color4);
+    color: white !important;
+    transition: background-color 150ms ease-in;
+  }
+  .mobileSignUp:hover {
+    background-color: hsl(355, 68%, 28%);
+  }
+  .mobileMenu .promoCodeForm {
+    display: block;
+  }
+  .mobileMenu .promoCodeForm input:first-child {
+    margin-left: 0;
+    width: clamp(160px, 70%, 500px);
   }
 
   /***************** End of  Styling Hamburger*/

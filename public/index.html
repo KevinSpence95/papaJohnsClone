@@ -9,11 +9,28 @@
 
   <body>
     <div class="mobileMenu">
-
+      <ul>
+        <li>
+          <a href="#" class="mobileSignUp">Sign Up</a>
+        </li>
+        <li>
+          <a href="#">Log In</a>
+        </li>
+        <li>
+          <a href="#">English</a>
+          <a href="#">Español</a>
+        </li>
+        <li>
+          <form action="" class="promoCodeForm">
+            <input type="text" placeholder="Enter a promo code" />
+            <input type="submit" value="APPLY" />
+          </form>
+        </li>
+        <li></li>
+      </ul>
     </div>
     <div class="pageWrapper">
-      <div class="pageOverlay">
-      </div>
+      <div class="pageOverlay"></div>
       <header class="navContainer">
         <nav class="topNav">
           <ul>
@@ -92,24 +109,31 @@
                 </svg>
               </a>
               <!-- Login Popup -->
-              <div class="login-popup hide-popup"><!--hide-popup -->
+              <div class="login-popup hide-popup">
+                <!--hide-popup -->
                 <h3>Log In</h3>
                 <form action="" class="loginForm">
-                  <div class = 'loginFormSection'>
+                  <div class="loginFormSection">
                     <label for="email">Email Address *</label>
                     <input type="email" name="email" />
                   </div>
-                  <div class = 'loginFormSection'>
+                  <div class="loginFormSection">
                     <label for="password">Password *</label>
                     <input type="password" name="password" />
                     <a href="#">Forgot your Password?</a>
                   </div>
-                  <div class = 'loginFormSection'>
+                  <div class="loginFormSection">
                     <label for="rememberMe">Keep me signed in</label>
-                    <input type="checkbox" name="rememberMe" class="rememberMe"/>
-                    <label for="rememberMe">Uncheck if using a public device.</label>
+                    <input
+                      type="checkbox"
+                      name="rememberMe"
+                      class="rememberMe"
+                    />
+                    <label for="rememberMe"
+                      >Uncheck if using a public device.</label
+                    >
                   </div>
-                  <div class = 'loginFormSection'>
+                  <div class="loginFormSection">
                     <button type="submit">Log In</button>
                     <div>
                       <p>Dont have an account?</p>
@@ -190,13 +214,9 @@
           </ul>
         </nav>
       </header>
-  
-      <main class="mainContent" style="height: 30vh">
-        <div class="hero">
-          <h3>Starting at $13</h3>
-        </div>
-      </main>
-  
+
+      <main class="mainContent" style="height: 30vh"></main>
+
       <footer>
         <div class="footerContentWidthControl">
           <section class="footerLinks">
@@ -240,7 +260,7 @@
             </a>
           </section>
         </div>
-  
+
         <div class="footerContentWidthControl footerBottom">
           <select class="countrySelect">
             <option value="">International Sites</option>
@@ -329,7 +349,9 @@
                 class="feather feather-instagram"
               >
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
             </a>
