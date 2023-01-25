@@ -1,0 +1,71 @@
+.sliderSection {
+  background-color: cornflowerblue;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.cardWindow {
+  height: 400px;
+  width: min(100vw, calc(960px + 6rem));
+  background-color: azure;
+  overflow-x: scroll;
+
+  position:relative;
+}
+
+.cardSlider {
+  height: 400px;
+  width: fit-content;
+  padding: 0 1.5rem;
+  background-color: azure;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+
+  
+  
+}
+
+.card {
+  min-width: 320px;
+  min-height: 362px;
+  border-radius: 1.5rem;
+  background-color: yellowgreen;
+}
+@media screen and (max-width: 833px) {
+    .cardSlider {
+        gap:.75rem;
+    }
+    .card {
+        min-width: 272px;
+    }
+}
+
+button {
+    position: absolute;
+    background-color: black;
+    border: 1px solid black;
+    color:white;
+    opacity: .4;
+    border-radius: 5rem;
+    padding:.5rem;
+    cursor:pointer;
+    z-index: 100;
+}
+
+button:hover {
+    opacity: 1;
+    color:white;
+}
+
+.leftArrow {
+    left:2rem;
+}
+
+.rightArrow {
+    right:2rem;
+}

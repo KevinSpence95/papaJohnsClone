@@ -1,3 +1,25 @@
 .main__home {
-  color: red !important;
+  height:3070px;
+  background-color: bisque;
+}
+
+.whiteBtn {
+  color: black;
+  padding: .35rem .75rem;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 2rem;
+}
+.whiteBtn:hover {
+  background-color: rgb(227, 227, 227);
+}
+.blackBtn {
+  color: white;
+  padding: .35rem .75rem;
+  border: 1px solid white;
+  background-color: black;
+  border-radius: 2rem;
+}
+.blackBtn:hover {
+  background-color: rgb(46, 46, 46);
 }
