@@ -68,7 +68,6 @@ loginTarget.addEventListener("click", () => {
 
 //process closing the popups when the user clicks elsewhere besides the popups
 document.addEventListener("click", (e) => {
-  console.log(e.target.closest("a"));
   //if both popups are hidden
   if (
     languagePopup.classList.contains("hide-popup") &&
