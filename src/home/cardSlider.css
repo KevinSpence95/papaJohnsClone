@@ -15,33 +15,23 @@
   display: flex;
   align-items: center;
 }
-/* .cardWindow::-webkit-scrollbar {
-   
-}
 
-.cardWindow::-webkit-scrollbar-track {
-  background-color: #e6e6e6e6;
-}
-
-.cardWindow::-webkit-scrollbar-thumb {
-  background-color: var(--color2);
-} */
 /* width */
-::-webkit-scrollbar {
-    height: 4px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: var(--color5);
-    border-radius: 10px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--color2);
-    border-radius: 0px;
-  }
+.cardWindow::-webkit-scrollbar {
+  height: 4px;
+}
+
+/* Track */
+.cardWindow::-webkit-scrollbar-track {
+  background: var(--color5);
+  border-radius: 10px;
+}
+
+/* Handle */
+.cardWindow::-webkit-scrollbar-thumb {
+  background: var(--color2);
+  border-radius: 0px;
+}
 
 .trimWindow:first-of-type {
   background-color: var(--color1);
