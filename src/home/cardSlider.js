@@ -1,4 +1,5 @@
 import "./cardSlider.css";
+// import card1 from './images/card1.webp'
 
 export default function cardSlider() {
   let content = document.createElement("section");
@@ -10,12 +11,40 @@ export default function cardSlider() {
         <div class='trimWindow'></div>
         <div class='cardWindow'>
             <div class='cardSlider'>
-                <div class='card'></div>
-                <div class='card'></div>
-                <div class='card'></div>
-                <div class='card'></div>
-                <div class='card'></div>
-                <div class='card'></div>
+                <div class='card'>
+                    <div class='cardGradient'></div>
+                    <div class='smallBanner'><h5>New</h5></div>
+                    <div class='midBanner'><h3>Starting at $4.99</h3></div>
+                    <h4>Papa Bites: Savory. Spicy. Sweet.</h4>
+                    <button type='button'>Order Now</button>
+                </div>
+                <div class='card'>
+                    <div class='cardGradient'></div>
+                    <div class='smallBanner'><h5>Limited Time</h5></div>
+                    <div class='midBanner'><h3>Starting at $6.99</h3></div>
+                    <h4>Papa Pairings</h4>
+                    <button type='button'>Order Now</button>
+                </div>
+                <div class='card'>
+                    <div class='cardGradient'></div>
+                    <h4>Explore Our Full Menu</h4>
+                    <button type='button'>Order Now</button>
+                </div>
+                <div class='card'>
+                    <div class='cardGradient'></div>
+                    <h4>Now More Rewarding</h4>
+                    <button type='button'>Order Now</button>
+                </div>
+                <div class='card'>
+                    <div class='cardGradient'></div>
+                    <h4>Create Your Own</h4>
+                    <button type='button'>Order Now</button>
+                </div>
+                <div class='card'>
+                    <div class='cardGradient'></div>
+                    <h4>Invite us to your next party</h4>
+                    <button type='button'>Order Now</button></div>
+                </div>
             </div>
         </div>
         <div class='trimWindow'></div>
@@ -37,78 +66,35 @@ export default function cardSlider() {
   });
 
   function slideLeft() {
-    let { regionWidth, scrollPosition} = getSliderData();
-
+    let { regionWidth, scrollPosition } = getSliderData();
 
     if (Math.floor(scrollPosition) % regionWidth !== 0) {
-        cardWindow.scroll({
-            left: Math.floor(scrollPosition / regionWidth) * regionWidth,
-            behavior: "smooth",
-        });
+      cardWindow.scroll({
+        left: Math.floor(scrollPosition / regionWidth) * regionWidth,
+        behavior: "smooth",
+      });
     } else {
-        cardWindow.scroll({
-            left: scrollPosition - regionWidth,
-            behavior: "smooth",
-        });
+      cardWindow.scroll({
+        left: scrollPosition - regionWidth,
+        behavior: "smooth",
+      });
     }
-    
-    // if (scrollPosition % positionRanges[0] === 0) {
-    //   let left =
-    //     (Math.floor(scrollPosition / positionRanges[0]) - 1) *
-    //     positionRanges[0];
-    //   cardWindow.scroll({
-    //     left: left,
-    //     behavior: "smooth",
-    //   });
-    // } else {
-    //   cardWindow.scroll({
-    //     left:
-    //       Math.floor(scrollPosition / positionRanges[0]) * positionRanges[0] -
-    //       1,
-    //     behavior: "smooth",
-    //   });
-    // }
   }
 
   function slideRight() {
+    let { regionWidth, scrollPosition } = getSliderData();
 
-      let { regionWidth, scrollPosition} = getSliderData();
-
-
-      if (Math.floor(scrollPosition) % regionWidth !== 0) {
-          cardWindow.scroll({
-              left: (Math.floor(scrollPosition / regionWidth)+1) * regionWidth,
-              behavior: "smooth",
-          });
-      } else {
-          cardWindow.scroll({
-              left: scrollPosition + regionWidth,
-              behavior: "smooth",
-          });
-      }
-
-    // alert(`scrollLeft = ${scrollPosition} of ${maxScrollLeft}`);
-
-    // if (scrollPosition % positionRanges[0] === 0) {
-    //   cardWindow.scroll({
-    //     left:
-    //       (Math.floor(scrollPosition / positionRanges[0]) + 1) *
-    //       positionRanges[0],
-    //     behavior: "smooth",
-    //   });
-    //   alert(scrollPositionRight);
-    // } else {
-    //   let left = (Math.floor(scrollPosition / positionRanges[0]) + 1) *
-    //   positionRanges[0]
-    //   if(maxScrollLeft-scrollPosition < (cardWidth + 2)) {
-    //     left = maxScrollLeft;
-    //   }
-    //   cardWindow.scroll({
-    //     left:
-    //       left,
-    //     behavior: "smooth",
-    //   });
-    // }
+    if (Math.floor(scrollPosition) % regionWidth !== 0) {
+      cardWindow.scroll({
+        left: (Math.floor(scrollPosition / regionWidth) + 1) * regionWidth,
+        behavior: "smooth",
+      });
+    } else {
+      cardWindow.scroll({
+        left: scrollPosition + regionWidth,
+        behavior: "smooth",
+      });
+    }
   }
 
   function getSliderData() {
