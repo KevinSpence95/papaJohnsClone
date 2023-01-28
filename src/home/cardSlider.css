@@ -92,7 +92,7 @@ button {
     border-radius: 5rem;
     padding:.5rem;
     cursor:pointer;
-    z-index: 100;
+    z-index: 1500;
 }
 
 button:hover {

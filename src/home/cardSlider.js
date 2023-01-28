@@ -23,33 +23,100 @@ export default function cardSlider() {
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </button>
   `;
-  let leftArrow = content.querySelector(".leftArrow");
+
+  const leftArrow = content.querySelector(".leftArrow");
   leftArrow.addEventListener("click", () => {
     slideLeft();
   });
+
+  const cardWindow = content.querySelector(".cardWindow");
+
+  let rightArrow = content.querySelector(".rightArrow");
+  rightArrow.addEventListener("click", () => {
+    slideRight();
+  });
+
   function slideLeft() {
-    let { positionRanges, scrollPosition } = getSliderData();
-    if (scrollPosition % positionRanges[0] === 0) {
-      let left =
-        (Math.floor(scrollPosition / positionRanges[0]) - 1) *
-        positionRanges[0];
-      cardWindow.scroll({
-        left: left,
-        behavior: "smooth",
-      });
+    let { regionWidth, scrollPosition} = getSliderData();
+
+
+    if (Math.floor(scrollPosition) % regionWidth !== 0) {
+        cardWindow.scroll({
+            left: Math.floor(scrollPosition / regionWidth) * regionWidth,
+            behavior: "smooth",
+        });
     } else {
-      cardWindow.scroll({
-        left:
-          (Math.floor(scrollPosition / positionRanges[0]) * positionRanges[0])-1,
-        behavior: "smooth",
-      });
+        cardWindow.scroll({
+            left: scrollPosition - regionWidth,
+            behavior: "smooth",
+        });
     }
+    
+    // if (scrollPosition % positionRanges[0] === 0) {
+    //   let left =
+    //     (Math.floor(scrollPosition / positionRanges[0]) - 1) *
+    //     positionRanges[0];
+    //   cardWindow.scroll({
+    //     left: left,
+    //     behavior: "smooth",
+    //   });
+    // } else {
+    //   cardWindow.scroll({
+    //     left:
+    //       Math.floor(scrollPosition / positionRanges[0]) * positionRanges[0] -
+    //       1,
+    //     behavior: "smooth",
+    //   });
+    // }
+  }
+
+  function slideRight() {
+
+      let { regionWidth, scrollPosition} = getSliderData();
+
+
+      if (Math.floor(scrollPosition) % regionWidth !== 0) {
+          cardWindow.scroll({
+              left: (Math.floor(scrollPosition / regionWidth)+1) * regionWidth,
+              behavior: "smooth",
+          });
+      } else {
+          cardWindow.scroll({
+              left: scrollPosition + regionWidth,
+              behavior: "smooth",
+          });
+      }
+
+    // alert(`scrollLeft = ${scrollPosition} of ${maxScrollLeft}`);
+
+    // if (scrollPosition % positionRanges[0] === 0) {
+    //   cardWindow.scroll({
+    //     left:
+    //       (Math.floor(scrollPosition / positionRanges[0]) + 1) *
+    //       positionRanges[0],
+    //     behavior: "smooth",
+    //   });
+    //   alert(scrollPositionRight);
+    // } else {
+    //   let left = (Math.floor(scrollPosition / positionRanges[0]) + 1) *
+    //   positionRanges[0]
+    //   if(maxScrollLeft-scrollPosition < (cardWidth + 2)) {
+    //     left = maxScrollLeft;
+    //   }
+    //   cardWindow.scroll({
+    //     left:
+    //       left,
+    //     behavior: "smooth",
+    //   });
+    // }
   }
 
   function getSliderData() {
     let cardWidth = getCardWidth();
     let scrollPosition = cardWindow.scrollLeft;
     let cardSliderWidth = getCardSliderWidth();
+    let maxScrollLeft = getMaxScrollLeft();
+    let leftToScroll = maxScrollLeft - scrollPosition;
     let numCards = getNumCards();
     let gapWidth = (cardSliderWidth - cardWidth * numCards) / (numCards + 1);
     let positionRanges = [];
@@ -57,10 +124,21 @@ export default function cardSlider() {
       let upperBound = i * cardWidth + i * gapWidth;
       positionRanges.push(upperBound);
     }
+    let regionWidth = positionRanges[0];
     return {
-      positionRanges,
       scrollPosition,
+      leftToScroll,
+      maxScrollLeft,
+      positionRanges,
+      regionWidth,
+      numCards,
+      cardWidth,
+      gapWidth,
+      cardSliderWidth,
     };
+  }
+  function getMaxScrollLeft() {
+    return cardWindow.scrollWidth - cardWindow.clientWidth;
   }
   function getCardWidth() {
     let card = document.querySelector(".card");
@@ -78,21 +156,5 @@ export default function cardSlider() {
     return numCards;
   }
 
-  let rightArrow = content.querySelector(".rightArrow");
-  rightArrow.addEventListener("click", () => {
-    slideRight();
-  });
-
-  function slideRight() {
-    let { positionRanges, scrollPosition } = getSliderData();
-    cardWindow.scroll({
-      left:
-        (Math.floor(scrollPosition / positionRanges[0]) + 1) *
-        positionRanges[0],
-      behavior: "smooth",
-    });
-  }
-
-  let cardWindow = content.querySelector(".cardWindow");
   return content;
 }
