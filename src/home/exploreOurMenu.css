@@ -1,0 +1,122 @@
+.exploreOurMenu {
+    height:450px;
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap:3rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:1.5rem;
+}
+
+.container a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:.75rem;
+    max-width: 910px;
+    position:relative;
+}
+
+.container p::after {
+    content: '';
+    display: block;
+    position: relative;
+    height: 1px;
+    width: 0%;
+    background-color: black;
+    left:50%;
+    transition: left 300ms ease-out, width 300ms ease-out;
+}
+
+.container a:hover p::after{
+    border-bottom: 1px solid black;
+    display: absolute; 
+    background-color: black;
+    left:0%;
+    width: 100%;
+
+}
+
+.container a > div {
+    width: 90px;
+    height: 90px;
+    border-radius: 50rem;
+    overflow: hidden;
+    /* background-color: orange; */
+}
+.container a > div > div {
+    width: 90px;
+    height: 90px;
+    border-radius: 50rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 300ms ease;
+}
+.container a:hover > div > div {
+    transform:scale(1.1)
+}
+
+.container a p {
+    color: var(--color2);
+    text-transform: none;
+    font-size: .9rem;
+}
+
+.thumb1 {
+    background-image: url('./images/thumb1.webp'); 
+}
+.thumb2 {
+    background-image: url('./images/thumb2.webp'); 
+}
+.thumb3 {
+    background-image: url('./images/thumb3.webp'); 
+}
+.thumb4 {
+    background-image: url('./images/thumb4.webp'); 
+}
+.thumb5 {
+    background-image: url('./images/thumb5.webp'); 
+}
+.thumb6 {
+    background-image: url('./images/thumb6.webp'); 
+}
+.thumb7 {
+    background-image: url('./images/thumb7.webp'); 
+}
+.thumb8 {
+    background-image: url('./images/thumb8.webp'); 
+}
+.thumb9 {
+    background-image: url('./images/thumb9.webp'); 
+}
+.thumb10 {
+    background-image: url('./images/thumb10.webp'); 
+}
+
+/* -------------------------*/
+/* disables hover on parent */
+/* .container {
+    pointer-events: none;
+} */
+/* styles for parent element when hover is on child */
+/* .container:hover {
+    background-color: blueviolet;
+} */
+/* enables hover on the parent */
+/* .container a {
+    pointer-events: auto;
+} */
+/* styles for child element when hover is on child*/
+/* .container a:hover {
+    background-color: yellow;
+} */
+/* -------------------------*/

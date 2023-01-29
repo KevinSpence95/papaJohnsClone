@@ -1,6 +1,7 @@
 import "./home.css";
 import hero from "./hero";
 import cardSlider from "./cardSlider";
+import exploreOurMenu from "./exploreOurMenu";
 
 export default function home() {
   let content = document.createElement("div");
@@ -10,6 +11,7 @@ export default function home() {
   // content.appendChild(line1)
   content.appendChild(hero())
   content.appendChild(cardSlider())
+  content.appendChild(exploreOurMenu())
   // content.textContent = "Home";
 
   return content;
