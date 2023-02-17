@@ -19,6 +19,7 @@ export default function hero() {
                 <a href="#" class='blackBtn'>Order Delivery</a>
                 <a href="#" class='whiteBtn'>Order Carryout</a>
             </div>
+            <div class = 'heroGradient'></div>
   `;
   return content;
 }

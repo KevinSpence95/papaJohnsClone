@@ -274,13 +274,13 @@ a {
 .loginFormSection:nth-child(3) label:first-child {
   position: absolute;
   font-size: 0.85rem;
-  left: 50px;
-  bottom: 121px;
+  left: 46px;
+  bottom: 116px;
 }
 .rememberMe {
   accent-color: var(--color3);
-  width: 1rem;
-  height: 1rem;
+  width: .85rem;
+  height: .85rem;
 }
 .rememberMe + label {
   margin-top: 4px;
