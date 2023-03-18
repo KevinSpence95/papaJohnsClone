@@ -4,8 +4,6 @@ import menu from "./menu/menu";
 import specials from "./specials/specials";
 import papaRewards from "./papaRewards/papaRewards";
 
-// import Mountains from "./Mountains.jpg";
-
 const main = document.body.querySelector(".mainContent");
 
 function changeMain(page) {

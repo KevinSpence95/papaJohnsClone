@@ -105,12 +105,7 @@
     background-image: url("./images/card3.webp");
     background-position: -80px 0;
 }
-/* .card:nth-child(1):hover,
-.card:nth-child(2):hover,
-.card:nth-child(3):hover {
-  background-position: -100px -10px;
-  background-size: 135% 108%;
-} */
+
 .card:nth-child(4) {
   background-image: url("./images/card4.webp");
   background-position: -90px 0;
@@ -167,6 +162,8 @@ h3:nth-child(1) {
   margin-top: 2rem;
   transition: all 250ms;
   cursor: pointer;
+  color: black;
+  background-color: white;
 }
 .card button:hover {
   background-color: var(--color0);
